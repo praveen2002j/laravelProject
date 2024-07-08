@@ -12,4 +12,4 @@ Route::get('/login',function(){
 
 Route::get('/registration',function(){
     return view ('registration');
-});  
+});   
