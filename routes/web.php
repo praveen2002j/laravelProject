@@ -13,3 +13,11 @@ Route::get('/registration',[Authmanager::class,'registration'])->name('registrat
 Route::post('/registration',[Authmanager::class,'registrationPost'])->name('registration.post');
 
 Route::get('/logout',[Authmanager::class,'logout'])->name('logout');
+Route::group(['middleware'=> 'auth'],function(){
+    Route::get('/profile',function(){
+        return "Hi" ;
+    });
+});
+Route::get('/profile',function(){
+    return "Hi" ;
+});

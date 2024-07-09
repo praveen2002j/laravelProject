@@ -9,10 +9,16 @@ use App\Models\User;
 class Authmanager extends Controller
 {
    function login(){
+    if(Auth::check()){
+        return redirect(route('home'));
+    }
     return view('login');
    }
 
    function registration(){
+    if(Auth::check()){
+        return redirect(route('home'));
+    }
     return view('registration');
    }
 
@@ -31,6 +37,8 @@ class Authmanager extends Controller
    }
 
    function registrationPost(Request $request){
+
+    
     $request->validate([
         'name'  => 'required',
         'email'  => 'required|email|unique:users',
