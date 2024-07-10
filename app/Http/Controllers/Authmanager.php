@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session; 
 use App\Models\User; 
 class Authmanager extends Controller
 {
@@ -22,6 +23,7 @@ class Authmanager extends Controller
     return view('registration');
    }
 
+    
    function loginPost(Request $request) {
         $request->validate([
             'email'  => 'required',
@@ -62,11 +64,12 @@ class Authmanager extends Controller
 
    }
 
-  function logout(){
-    Session::flush();
-    Auth:logout();
-    return redirect(route('login'));
+  
+  public function logout()
+  {
+      Session::flush(); // Flush all session data
+      Auth::logout(); // Logout the authenticated user
+      return redirect(route('login')); // Redirect to login page
   }
-
 }
   
