@@ -39,14 +39,15 @@
           <a class="sidebar-brand brand-logo" href="index.html"><img src="{{asset('assets/auth/images/logo.svg')}}" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="{{asset('assets/auth/images/logo-mini.svg')}}" alt="logo" /></a>
         </div>
-        
+
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
                   <img class="img-xs rounded-circle " src="{{asset('assets/auth/images/faces/face15.jpg')}}" alt="">
-                  <span class="count bg-success"></span>
+                  <span class="count bg-success"></span>  
+
                 </div>
                 <div class="profile-name">
                   <h5 class="mb-0 font-weight-normal">{{Auth::user()->name}}</h5>
@@ -127,7 +128,7 @@
             <ul class="navbar-nav w-100">
               <li class="nav-item w-100">
                 <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                  <input type="text" class="form-control" placeholder="Search products">
+                  <input type="text" class="form-control" placeholder="Search product">
                 </form>
               </li>
             </ul>
